@@ -74,13 +74,14 @@ class Graphics : public Shapes, public Image
 
     uint8_t _blockPartial = 1;
 
+    void      writeLine(int16_t x0, int16_t y0, int16_t  x1, int16_t  y1, uint16_t color) override;
+
   private:
     void     startWrite(void) override;
     void     writePixel(int16_t  x, int16_t  y, uint16_t color) override;
     void  writeFillRect(int16_t  x, int16_t  y, int16_t  w,  int16_t  h, uint16_t color) override;
     void writeFastVLine(int16_t  x, int16_t  y, int16_t  h,  uint16_t color) override;
     void writeFastHLine(int16_t  x, int16_t  y, int16_t  w,  uint16_t color) override;
-    void      writeLine(int16_t x0, int16_t y0, int16_t  x1, int16_t  y1, uint16_t color) override;
     void       endWrite(void) override;
 };
 
